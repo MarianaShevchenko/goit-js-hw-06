@@ -12,14 +12,20 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+console.log('Масив зображень:', images);
+
 const galleryList = document.querySelector('.gallery');
 
 const createGalleryItem = ({ url, alt }) =>
   `<li class="gallery__item"><img src="${url}" alt="${alt}" class="gallery__img"></li>`;
 
+console.log('Функція створення елементу галереї:', createGalleryItem);
+
 const galleryMarkup = images.reduce(
   (acc, item) => acc + createGalleryItem(item),
   ''
 );
-
+console.log('Створений HTML-код галереї:', galleryMarkup);
 galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
+
+console.log('Галерея зображень була створена та додана до сторінки.');
